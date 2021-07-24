@@ -28,19 +28,19 @@ AddEventHandler('esx_status:loaded', function(status)
 
 	TriggerEvent('esx_status:registerStatus', 'hunger', 1000000, '#CFAD0F',
 		function(status)
-			return true
+			return false
 		end,
 		function(status)
-			status.remove(200)
+			status.remove(10)
 		end
 	)
 
 	TriggerEvent('esx_status:registerStatus', 'thirst', 1000000, '#0C98F1',
 		function(status)
-			return true
+			return false
 		end,
 		function(status)
-			status.remove(250)
+			status.remove(15)
 		end
 	)
 

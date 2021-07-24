@@ -144,14 +144,14 @@ end)
 -- Pause menu disable hud display
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(100)
+		Citizen.Wait(300)
 
 		if IsPauseMenuActive() and not isPaused then
 			isPaused = true
 			TriggerEvent('esx_status:setDisplay', 0.0)
 		elseif not IsPauseMenuActive() and isPaused then
 			isPaused = false 
-			TriggerEvent('esx_status:setDisplay', 1)
+			TriggerEvent('esx_status:setDisplay', 0.5)
 		end
 	end
 end)
@@ -168,18 +168,4 @@ Citizen.CreateThread(function()
 
 		TriggerServerEvent('esx_status:update', GetStatusData(true))
 	end
-end)
-
--- Healty status bars
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(100)
-		
-        SendNUIMessage({
-            health = GetEntityHealth(GetPlayerPed(-1)) - 100,
-            armor = GetPedArmour(GetPlayerPed(-1)),
-            stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId()),
-			diving = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10.00,
-        })
-    end
 end)

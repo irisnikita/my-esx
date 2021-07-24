@@ -87,20 +87,3 @@ function SaveData()
 end
 
 SaveData()
-
--- Update Checker
-local CurrentVersion = '1.1.0'
-
-PerformHttpRequest('https://raw.githubusercontent.com/EmiliaDevelopers/emilia_statusvoice/master/version', function(Error, NewestVersion, Header)
-		print('[^2emilia_statusvoice^0] Current Version: ' .. CurrentVersion)
-		print('[^2emilia_statusvoice^0] Updater version: ' .. NewestVersion)
-		if CurrentVersion ~= NewestVersion then
-			print('\n')
-			print('[^4emilia_statusvoice^0] You"re not running the newest stable version of emilia_-ui-statusvoice please updater at https://github.com/EmiliaDevelopers')
-		else
-		    print('\n')
-			print('[^2emilia_statusvoice^0] Authenticated with emilia.developers API: https://Free-5zW3pHVzwwlcqpam.guests.emilia.developers/')
-			print('[^2emilia_statusvoice^0] Thanks you! Supporpting this script Welcome!')
-		end
-		print('\n')	
-end)

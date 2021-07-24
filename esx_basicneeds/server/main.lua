@@ -9,7 +9,7 @@ ESX.RegisterUsableItem('bread', function(source)
 
 	xPlayer.removeInventoryItem('bread', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'hunger', 200000)
+	TriggerClientEvent('esx_status:add', source, 'hunger', 500000)
 	TriggerClientEvent('esx_basicneeds:onEat', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_bread'))
 
@@ -22,7 +22,7 @@ ESX.RegisterUsableItem('water', function(source)
 
 	xPlayer.removeInventoryItem('water', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'thirst', 200000)
+	TriggerClientEvent('esx_status:add', source, 'thirst', 500000)
 	TriggerClientEvent('esx_basicneeds:onDrink', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_water'))
 
